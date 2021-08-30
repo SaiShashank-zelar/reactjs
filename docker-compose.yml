@@ -2,12 +2,22 @@ version: "3.9"
 services:
   postgres:
     image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: loizenaidb
+
+    ports:
+      - "5432:5432"
 
   frontend:
     image: sheshuvalandas/frontend
     container_name: frontend
     ports:
       - "3000:3000"
+    environment:
+      proxy: http://backend:8080
 
     depends_on:
       - backend
@@ -16,11 +26,11 @@ services:
     image: sheshuvalandas/backend
     container_name: backend
     environment:
-      - database=loizenaidb
-      - username=postgres
-      - password=123
-      - host=localhost
-      - dialect=postgres
+      database: loizenaidb
+      username: postgres
+      password: 123
+      host: postgres
+      dialect: postgres
 
     ports:
       - "8080:8080"
