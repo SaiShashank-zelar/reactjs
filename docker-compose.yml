@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:latest
+
+  frontend:
+    image: sheshuvalandas/frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - backend
+
+  backend:
+    image: sheshuvalandas/backend
+    container_name: backend
+    environment:
+      - database=loizenaidb
+      - username=postgres
+      - password=123
+      - host=localhost
+      - dialect=postgres
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - postgres
