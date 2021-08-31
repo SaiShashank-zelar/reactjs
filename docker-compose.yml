@@ -10,8 +10,9 @@ services:
       - /app/frontend/node_modules
       - .:/app/frontend
 
-        #ports:
-    #  - "3000:3000"
+    ports:
+      - "3000:3000"
+
     #links:
     #  - backend
     #command: npm start
@@ -19,12 +20,12 @@ services:
   backend:
     image: sheshuvalandas/backend
     container_name: backend
-    #ports:
-    #  - "8080:8080"
+    ports:
+      - "8080:8080"
 
     volumes:
       - /app/backend/node_modules
-      - .:/app/backend
+      - ./backend:/app/backend
     depends_on:
       - postgres
     environment:
