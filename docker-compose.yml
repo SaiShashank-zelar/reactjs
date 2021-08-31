@@ -14,8 +14,6 @@ services:
     volumes:
       - ./:/app/frontend
     command: npm start
-    env_file:
-      - ./frontend/app/config/env.js
 
   backend:
     image: sheshuvalandas/backend
@@ -30,6 +28,9 @@ services:
       password: 123
       host: postgres
     command: node server.js
+    env_file:
+      - ./backend/app/config/env.js
+
 
 
   postgres:
