@@ -18,7 +18,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      proxy: http://127.0.0.1:8080
+      proxy: http://backend:8080
+    depends_on:
+      - backend
 
   backend:
     image: sheshuvalandas/backend
@@ -33,5 +35,5 @@ services:
     ports:
       - "8080:8080"
 
-    #depends_on:
-    #  - postgres
+    depends_on:
+      - postgres
