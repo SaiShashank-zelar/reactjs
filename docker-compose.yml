@@ -29,7 +29,7 @@ services:
       host: postgres
     command: node server.js
     env_file:
-      - ./backend/app/config/env.js
+      - /root/backend/app/config/env.js
 
 
 
