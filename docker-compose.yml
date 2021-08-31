@@ -46,6 +46,8 @@ services:
 
     environment:
       POSTGRES_PASSWORD: 123
+      POSTGRES_USER: postgres
+      POSTGRES_DB: loizenaidb
 
 
     #volumes:
