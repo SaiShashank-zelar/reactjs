@@ -24,8 +24,8 @@ services:
   backend:
     image: sheshuvalandas/backend
     container_name: backend
-    #ports:
-    #  - "8080:8080"
+    ports:
+      - "8080:8080"
 
     volumes:
       - /app/backend/node_modules
