@@ -6,4 +6,4 @@ RUN          npm install
 RUN          npm run build
 COPY         . /app/frontend
 RUN          ls
-CMD          [ "npm start"]
+CMD          npm start
