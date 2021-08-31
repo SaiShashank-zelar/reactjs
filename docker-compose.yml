@@ -57,4 +57,4 @@ services:
     restart: always
     image: sheshuvalandas/nginx-file
     ports:
-      - "80:80"
+      - "3050:80"
