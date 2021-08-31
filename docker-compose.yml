@@ -6,8 +6,12 @@ services:
     image: sheshuvalandas/frontend
     container_name: frontend
     stdin_open: true
-    ports:
-      - "3000:3000"
+    volumes:
+      - /app/frontend/node_modules
+      - .:/app/frontend
+
+        #ports:
+    #  - "3000:3000"
     #links:
     #  - backend
     #command: npm start
@@ -15,19 +19,19 @@ services:
   backend:
     image: sheshuvalandas/backend
     container_name: backend
-    ports:
-      - "8080:8080"
+    #ports:
+    #  - "8080:8080"
 
-    #depends_on:
-    #  - postgres
-    #environment:
-    #  database: loizenaidb
-    #  username: postgres
-    #  password: 123
-    #  host: postgres
-    #command: node server.js
-    #env_file:
-    #  - /root/backend/app/config/env.js
+    volumes:
+      - /app/backend/node_modules
+      - .:/app/backend
+    depends_on:
+      - postgres
+    environment:
+      database: loizenaidb
+      username: postgres
+      password: 123
+      host: postgres
 
 
 
@@ -44,3 +48,12 @@ services:
 
     #volumes:
     #  - postgres:/var/lib/postgresql/data
+
+  nginx:
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+    image: sheshuvalandas/nginx-file
+    ports:
+      - "80:80"
