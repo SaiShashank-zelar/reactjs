@@ -17,16 +17,18 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
+    environment:
+      proxy: http://127.0.0.1:8080
 
   backend:
     image: sheshuvalandas/backend
     container_name: backend
-    #environment:
-    #  database: loizenaidb
-    #  username: postgres
-    #  password: 123
-    #  host: postgres
-    #  dialect: postgres
+    environment:
+      database: loizenaidb
+      username: postgres
+      password: 123
+      host: postgres
+      dialect: postgres
 
     ports:
       - "8080:8080"
