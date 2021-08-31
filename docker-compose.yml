@@ -10,9 +10,6 @@ services:
       - "3000:3000"
     links:
       - backend
-    working_dir: /app/frontend
-    volumes:
-      - ./:/app/frontend
     command: npm start
 
   backend:
