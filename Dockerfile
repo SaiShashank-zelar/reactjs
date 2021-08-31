@@ -1,8 +1,7 @@
-FROM         node:lts-alpine
+FROM         node:14.14.0-alpine
 RUN          mkdir  -p /app/frontend
 WORKDIR      /app/frontend
 COPY         .  /app/frontend
-RUN          CI=true
 RUN          npm install
 RUN          npm run build
 COPY         . /app/frontend
