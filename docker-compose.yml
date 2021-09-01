@@ -25,6 +25,7 @@ services:
       username: postgres
       password: 123
       host: postgres
+      dialect: postgres
 
 
 
