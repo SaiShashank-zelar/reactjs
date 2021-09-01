@@ -9,17 +9,8 @@ services:
     ports:
       - "3000:3000"
 
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-
-    volumes:
-      - /app/frontend/node_modules
-      - /root/reactjs:/app/frontend
     depends_on:
       - backend
-    links:
-      - backend
-    #command: npm start
 
   backend:
     image: sheshuvalandas/backend
@@ -27,9 +18,6 @@ services:
     ports:
       - "8080:8080"
 
-    volumes:
-      - /app/backend/node_modules
-      - /root/backend:/app/backend
     depends_on:
       - postgres
     environment:
@@ -51,11 +39,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: loizenaidb
 
-  nginx:
-    depends_on:
-      - backend
-      - frontend
-    restart: always
-    image: sheshuvalandas/nginx-file
-    ports:
-      - "3050:80"
+  #nginx:
+  #  depends_on:
+  #    - backend
+  #    - frontend
+  #  restart: always
+  #  image: sheshuvalandas/nginx-file
+  #  ports:
+  #    - "3050:80"
