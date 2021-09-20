@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      BACKEND_URL: backend
+      http_proxy: http://backend:8080,
 
     depends_on:
       - backend
