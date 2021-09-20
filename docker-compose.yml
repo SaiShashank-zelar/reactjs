@@ -21,7 +21,7 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_DB: loizenaidb
+      DATABASE_DATA: loizenaidb
       DATABASE_USER: postgres
       DATABASE_PASS: 123
       DATABASE_HOST: postgres
