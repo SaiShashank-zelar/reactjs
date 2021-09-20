@@ -24,7 +24,7 @@ services:
       DATABASE_DB: loizenaidb
       DATABASE_USER: postgres
       DATABASE_PASS: 123
-      DATABSE_HOST: postgres
+      DATABASE_HOST: postgres
 
 
 
