@@ -21,11 +21,11 @@ services:
     depends_on:
       - postgres
     environment:
-      database: loizenaidb
-      username: postgres
-      password: 123
-      host: postgres
-      dialect: postgres
+      BACKEND_DATA: loizenaidb
+      BACKEND_USER: postgres
+      BACKEND_PASS: 123
+      BACKEND_HOST: postgres
+      BACKEND_DIALECT: postgres
 
 
 
