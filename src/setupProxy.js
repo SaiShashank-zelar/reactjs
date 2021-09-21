@@ -13,6 +13,6 @@ const url = process.env.CONTAINER_NAME;
 const proxy = require('http-proxy-middleware');
 
 module.exports = function(app) {
-  app.use(proxy('/customers', { target: url }))
+  app.use(proxy('/', { target: url }))
 
 }
