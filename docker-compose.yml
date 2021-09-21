@@ -3,8 +3,7 @@ services:
 
 
   frontend:
-    #image: sheshuvalandas/frontend
-    build: .
+    image: sheshuvalandas/frontend
     container_name: frontend
     stdin_open: true
     ports:
