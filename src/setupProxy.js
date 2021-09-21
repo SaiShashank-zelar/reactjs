@@ -16,7 +16,7 @@ const url = process.env.CONTAINER_NAME;
 //  app.use(proxy('/', { target: url }))
 //
 //}
-const PROXY_CONFIG = [
+const PROXY_CONFIG = require('PROXY_CONFIG') [
    {
     context: ['/customers'],
     target: url,
