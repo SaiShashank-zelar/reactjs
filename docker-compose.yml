@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - CONTAINER_NAME=http://backend:8080
+      - CONTAINER_NAME=http://backend:8080/customers
 
     depends_on:
       - backend
