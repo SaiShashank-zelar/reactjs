@@ -8,11 +8,11 @@ services:
     stdin_open: true
     ports:
       - "3000:3000"
-    environment:
-      - CONTAINER_NAME=http://backend:8080
 
     depends_on:
       - backend
+    environment:
+      - CONTAINER_NAME=http://backend:8080
 
   backend:
     image: sheshuvalandas/backend
