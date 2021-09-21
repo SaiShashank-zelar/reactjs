@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - CONTAINERNAME=backend
+      - PROXY=backend
 
     depends_on:
       - backend
