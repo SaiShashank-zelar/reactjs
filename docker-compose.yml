@@ -12,7 +12,7 @@ services:
     depends_on:
       - backend
     environment:
-      - CONTAINER_NAME=http://backend:8080
+      - CONTAINER_NAME=http://backend:8080/customers
 
   backend:
     image: sheshuvalandas/backend
