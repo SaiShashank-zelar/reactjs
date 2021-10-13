@@ -42,11 +42,3 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: loizenaidb
 
-  #nginx:
-  #  depends_on:
-  #    - backend
-  #    - frontend
-  #  restart: always
-  #  image: sheshuvalandas/nginx-file
-  #  ports:
-  #    - "3050:80"
